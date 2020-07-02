@@ -1,24 +1,21 @@
-# frontend
+==============================
+SEQUENCIA PARA CRIAR O PROJETO
+==============================
+Criar o arquivo package
+npm init
 
-## Project setup
-```
+Instale as dependencias com
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+============================
+COMO RODAR O PROJETO BAIXADO
+============================
 
-### Compiles and minifies for production
-```
+//Faça um build do projeto, para garantir que não tem erros
 npm run build
-```
 
-### Lints and fixes files
-```
+//Verifique se há erros de sintaxe de acordo com o LINT
 npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+//Rode o projeto usando o  
+npm run serve

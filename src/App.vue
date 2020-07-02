@@ -1,28 +1,37 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div>
+  <Header />
+  <Form v-if="register" />
+  <Edit v-else :customer="customer" @rgt="register = $event"/>
+  <ListCustomer :register="register" @chng="customer = $event" @rgt="register = $event" />
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header.vue";
+import Form from "./components/Form.vue";
+import Edit from "./components/Edit.vue";
+
+import ListCustomer from "./components/ListCustomer.vue";
+
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  components: { Header, Form, Edit, ListCustomer },
+  data() {
+    return {
+      register: true,
+      customer: {
+          name: '',
+          email: '',
+          phone: '',
+          cpf: ''
+      }
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+
 </style>
